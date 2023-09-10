@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../images/logo_mini.png" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Mon compte</title>
+  </head>
+  <body>
+    <!-- Barre de navigation -->
+    <header class="container-fluid">
+      <!-- Barre de nav avec menu burger en version mobile -->
+      <nav id="navBurgerMobile" class="navbar navbar-expand-lg menu">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <a
+                class="nav-link px-4 rounded"
+                id="btnToutesnosBD"
+                href="listeBD.html"
+                >Toutes nos BDs</a
+              >
+              <a
+                class="nav-link px-4 rounded"
+                id="btnPromotions"
+                href="promotions.html"
+                >Promotions</a
+              >
+              <a
+                class="nav-link px-4 rounded"
+                id="btnListeEnvie"
+                href="favori.html"
+                >Liste d'envie</a
+              >
+              <a
+                class="nav-link px-4 rounded"
+                id="btnContact"
+                href="contact.html"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav id="nav1" class="nav justify-content-center">
+        <!--Logo -->
+        <div class="float-left">
+          <a href="../index.html">
+            <img src="../images/logo_mini.png" id="logo" alt="Logo BDDrive" />
+          </a>
+        </div>
+        <!--Recherche BD -->
+        <div id="champRechercheBDDesktop" class="float">
+          <form class="d-flex p-2 bd-highlight" role="search">
+            <input
+              id="rechercheBDDesktop"
+              class="form-control me-3"
+              type="search"
+              placeholder="Quelle BD recherchez-vous ?"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+          </form>
+        </div>
+        <!--Boutons compte et panier -->
+        <div id="btnComptePanier" class="d-flex float-right">
+          <form>
+            <button
+              type="submit"
+              formaction="compte.html"
+              id="btnCompte"
+              class="btn btn-outline-secondary"
+            >
+              <span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined" id="connex"></span>
+              <br>
+              <span id="titremonCompte">Mon compte</span>
+              <!-- <p id="connex"></p> -->
+            </button>
+          </form>
+          <form>
+            <button type="submit" formaction="panier.html" id="btnPanier" class="btn btn-outline-secondary">
+              <span class="material-symbols-outlined">shopping_cart</span>
+              <span id="nbrArticlePanier" class="float-end"></span>
+              <br>
+              <span id="titrePanier">Panier</span>
+            </button>
+          </form>
+        </div>
+      </nav>
+      <br />
+      <!-- 2eme barre de nav avec menu burger -->
+      <ul id="navDesktop" class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="listeBD.html">Toutes nos BDs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="promotions.html">Promotions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="favori.html">Liste d'envie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </header>
+
+    <div id="pageConnexionInscription">
+      <div id="formConnexionInscription">
+        <!-- Formulaire de Connexion -->
+        <form action="../index.html" method="get" id="formConnexion">
+          <h1 id="titreConnexion">Connexion</h1>
+          <h2 id="txtSousTitre">Nous sommes ravis de vous revoir !</h2>
+
+          <div class="mb-3">
+            <label for="connexionEmail" class="form-label" name="mail"
+              >Adresse mail :</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="connexionEmail"
+              aria-describedby="emailHelp"
+              pattern="(\w+@[a-zA-Z_]+?.[a-zA-Z]{2,6})"
+              value=""
+              name="mail"
+              required
+            />
+            <span id="errconnexionEmail"></span>
+          </div>
+          <div class="mb-3">
+            <label for="connexionMDP" class="form-label" name="mdp"
+              >Mot de passe :</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="connexionMDP"
+              minlength="8"
+              name="mdp"
+              required
+            />
+            <span id="errconnexionMDP"></span>
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="verifRobot"
+              required
+            />
+            <label class="form-check-label" for="verifRobot" id="verifRobot"
+              >Je ne suis pas un robot</label
+            >
+          </div>
+          <button type="submit" class="btn btn-dark" id="btnConnexion">
+            Se connecter
+          </button>
+        </form>
+
+        <br /><br />
+
+        <!-- Formulaire d'inscription -->
+        <form
+          action="../index.html"
+          method="get"
+          id="formInscription"
+          class="row g-3 needs-validation"
+        >
+          <h1 id="titreInscription">Inscription</h1>
+          <h2 id="txtSousTitre">Pas encore de compte ? Rejoignez-nous !</h2>
+
+          <div class="col-md-4">
+            <label for="inscriptionNom" class="form-label">Nom :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inscriptionNom"
+              minlength="2"
+              value=""
+              required
+            />
+            <span id="errNom"></span>
+          </div>
+
+          <div class="col-md-4">
+            <label for="inscriptionPrenom" class="form-label">Prénom :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inscriptionPrenom"
+              minlength="2"
+              value=""
+              required
+            />
+            <span id="errPrenom"></span>
+          </div>
+
+          <div class="col-md-4">
+            <label for="inscriptionAdresse" class="form-label">Adresse :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inscriptionAdresse"
+              value=""
+              required
+            />
+            <span id="errAdresse"></span>
+          </div>
+
+          <div class="col-md-4">
+            <label for="inscriptionCodePostal" class="form-label"
+              >Code postal :</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="inscriptionCodePostal"
+              required
+            />
+            <span id="errCP"></span>
+          </div>
+
+          <div class="col-md-4">
+            <label for="inscriptionVille" class="form-label">Ville :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inscriptionVille"
+              required
+            />
+            <span id="errVille"></span>
+          </div>
+
+          <div class="col-md-4">
+            <label for="inscriptionEmail" class="form-label"
+              >Adresse mail :</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="inscriptionEmail"
+              aria-describedby="emailHelp"
+              pattern="(\w+@[a-zA-Z_]+?.[a-zA-Z]{2,6})"
+              value=""
+              required
+            />
+            <span id="errMail"></span>
+          </div>
+
+          <div class="col-md-4">
+            <label for="inscriptionMDP" class="form-label"
+              >Mot de passe :</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="inscriptionMDP"
+              minlength="8"
+              placeholder="Min 8 caractères"
+              required
+            />
+            <span id="errMdp"></span>
+          </div>
+
+          <div class="col-md-4">
+            <label for="inscriptionConfirmMDP" class="form-label"
+              >Confirmation mot de passe :</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="inscriptionConfirmMDP"
+              minlength="8"
+              required
+            />
+            <span id="errConfMdp"></span>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="invalidCheck"
+                required
+              />
+              <label class="form-check-label" for="invalidCheck"
+                >J'accepte les conditions générales d'utilisation</label
+              >
+            </div>
+          </div>
+
+          <div class="col-12">
+            <button class="btn btn-dark" type="submit" id="btnInscription">
+              S'inscrire
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <img class="logoPiedPage" src="../images/logo.png" alt="Logo du site" />
+
+      <div class="colonnes">
+        <div class="colG">
+          <a href="#">Politique de confidentialité</a>
+          <br />
+          <a href="#">Conditions générales de ventes</a>
+          <br />
+          <a href="#">Mentions légales</a>
+          <br />
+        </div>
+        <div class="colD">
+          <a href="#">Qui sommes-nous ?</a>
+          <br />
+          <a href="#">Besoin d'aide ?</a>
+          <br />
+          <a href="compte.html">Créer votre compte</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../data/comptes.js"></script>
+    <script src="../js/connexion.js"></script>
+    <script src="../js/inscription.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

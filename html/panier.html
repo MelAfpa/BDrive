@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../images/logo_mini.png" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Panier</title>
+  </head>
+  <body>
+    <!-- Barre de navigation -->
+    <header class="container-fluid">
+      <!-- Barre de nav avec menu burger en version mobile -->
+      <nav id="navBurgerMobile" class="navbar navbar-expand-lg menu">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <a
+                class="nav-link px-4 rounded"
+                id="btnToutesnosBD"
+                href="listeBD.html"
+                >Toutes nos BDs</a
+              >
+              <a
+                class="nav-link px-4 rounded"
+                id="btnPromotions"
+                href="promotions.html"
+                >Promotions</a
+              >
+              <a
+                class="nav-link px-4 rounded"
+                id="btnListeEnvie"
+                href="favori.html"
+                >Liste d'envie</a
+              >
+              <a
+                class="nav-link px-4 rounded"
+                id="btnContact"
+                href="contact.html"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav id="nav1" class="nav justify-content-center">
+        <!--Logo -->
+        <div class="float-left">
+          <a href="../index.html">
+            <img src="../images/logo_mini.png" id="logo" alt="Logo BDDrive"/>
+          </a>
+        </div>
+        <!--Recherche BD -->
+        <div id="champRechercheBDDesktop" class="float">
+          <form class="d-flex p-2 bd-highlight" role="search">
+            <input
+              id="rechercheBDDesktop"
+              class="form-control me-3"
+              type="search"
+              placeholder="Quelle BD recherchez-vous ?"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+          </form>
+        </div>
+        <!--Boutons compte et panier -->
+        <div id="btnComptePanier" class="d-flex float-right">
+          <form>
+            <button
+              type="submit"
+              formaction="compte.html"
+              id="btnCompte"
+              class="btn btn-outline-secondary"
+            >
+              <span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined" id="connex"></span>
+              <br>
+              <span id="titremonCompte">Mon compte</span>
+            </button>
+          </form>
+          <form>
+            <button type="submit" formaction="panier.html" id="btnPanier" class="btn btn-outline-secondary">
+              <span class="material-symbols-outlined">shopping_cart</span>
+              <span id="nbrArticlePanier" class="float-end"></span>
+              <br>
+              <span id="titrePanier">Panier</span>
+            </button>
+          </form>
+        </div>
+      </nav>
+      <br />
+      <!-- 2eme barre de nav avec menu burger -->
+      <ul id="navDesktop" class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="listeBD.html">Toutes nos BDs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="promotions.html">Promotions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="favori.html">Liste d'envie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </header>
+
+    <section class="container-fluid">
+      <div class="text-center titre">
+          <h1>Votre panier</h1>
+      </div>
+      <!--Liste panier-->
+      <div class="row justify-content-center marge">
+          <div id="listePanier" class="col-sm-12 col-md-7 col-xl-6 col-xxl-5">
+            
+          </div>
+          <!--Total à payer-->
+          <div class="col-sm-12 cadreCommande">
+              <h4 class="text-center">Récapitulatif de commande</h4>
+              <hr class="my-4">
+              <div class="row align-items-center">
+                  <div class="col-sm-12 align-items-center codePromo">
+                      <label for="idPromo">Code promo</label>
+                      <input type="text" name="promo" id="idPromo">
+                      <button class="btn btn-primary btn-sm mb-1">OK</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-8 resp1">
+                      <span>Articles</span>
+                  </div>
+                  <div class="col-sm-4 resp2">
+                      <span class="float-end" id="idSousTotal"></span>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-8 resp1">
+                      <span>Frais de livraison</span>
+                  </div>
+                  <div class="col-sm-4 resp2">
+                      <span class="float-end">4,99 €</span>
+                  </div>
+              </div>
+              <hr class="my-4">
+              <div class="row">
+                  <div class="col-sm-8 resp1">
+                      <span class="totalTtc">Montant total</span>
+                  </div>
+                  <div class="col-sm-4 resp2">
+                      <span class="float-end totalTtc" id="idTotal"></span>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-8 resp1">
+                      <span>Dont TVA</span>
+                  </div>
+                  <div class="col-sm-4 resp2">
+                      <span class="float-end" id="idTva"></span>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <footer>
+        <img class="logoPiedPage" src="../images/logo.png" alt="Logo du site" />
+  
+        <div class="colonnes">
+          <div class="colG">
+            <a href="#">Politique de confidentialité</a>
+            <br />
+            <a href="#">Conditions générales de ventes</a>
+            <br />
+            <a href="#">Mentions légales</a>
+            <br />
+          </div>
+          <div class="colD">
+            <a href="#">Qui sommes-nous ?</a>
+            <br />
+            <a href="#">Besoin d'aide ?</a>
+            <br />
+            <a href="compte.html">Créer votre compte</a>
+          </div>
+        </div>
+    </footer>
+  
+      <script src="../js/bootstrap.bundle.js"></script>
+      <script src="../data/albums.js"></script>
+      <script src="../data/series.js"></script>
+      <script src="../data/auteurs.js"></script>
+      <script src="../js/panier.js"></script>
+      <script src="../js/main.js"></script>
+    </body>
+  </html>
